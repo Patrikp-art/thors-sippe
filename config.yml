@@ -1,0 +1,27 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: de
+media_folder: "bilder"
+public_folder: "/bilder"
+
+collections:
+  - name: "neuigkeiten"
+    label: "Neuigkeiten"
+    label_singular: "Neuigkeit"
+    description: "Hier kannst du die News auf der Startseite bearbeiten, neue hinzufügen oder löschen."
+    files:
+      - name: "news"
+        label: "Alle Neuigkeiten"
+        file: "news.json"
+        description: "Die Meldungen erscheinen auf der Website in der Reihenfolge, in der sie hier stehen – oberste zuerst."
+        fields:
+          - name: "meldungen"
+            label: "Meldungen"
+            label_singular: "Meldung"
+            widget: "list"
+            fields:
+              - { name: "datum", label: "Datum", widget: "string", hint: "Zum Beispiel: 15. Juni 2026" }
+              - { name: "titel", label: "Überschrift", widget: "string" }
+              - { name: "text", label: "Text der Meldung", widget: "text" }
